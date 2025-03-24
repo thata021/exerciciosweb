@@ -95,3 +95,54 @@ function exe5(){
     }
 
 }
+
+function exe6(){
+    let nro1 = Number(document.getElementById("nro1").value)
+    let nro2 = Number(document.getElementById("nro2").value)
+    let selecao = Number(document.getElementById("selecao").value)
+
+    switch (selecao){
+        case 1: document.getElementById("resultado").innerHTML = "O resultado é: " + nro1 ** nro2
+        break
+
+        case 2: document.getElementById("resultado").innerHTML = "O resultado é: " + Math.sqrt(nro1).toFixed(2) + "<br/> e " + Math.sqrt(nro2).toFixed(2)
+        break
+
+        case 3: document.getElementById("resultado").innerHTML = "O resultado é: " + Math.cbrt(nro1).toFixed(2) + "<br/> e " + Math.cbrt(nro2).toFixed(2)
+        break
+        
+    default: document.getElementById("resultado").innerText = "Opção Iválida";
+    }
+
+}
+
+function exe7(){
+    let salario = Number(document.getElementById("salario").value)
+
+    if (salario < 0){
+        document.getElementById("novoSalario").innerText = "Salário inválido!"
+    }
+    else if (salario <= 500){
+        novoSalario = salario * 1.30
+        document.getElementById("novoSalario").innerText = "Novo Salário é: " + novoSalario
+    }
+    else if (salario > 500){
+        document.getElementById("novoSalario").innerText = "Não tem direito ao aumento de salário!"
+    }
+}
+
+function exe8(){
+    let salario = Number(document.getElementById("salario").value)
+
+    if (salario < 0){
+        document.getElementById("novoSalario").innerHTML = "Salário inválido!"
+    }
+    else if (salario <= 300){
+        novoSalario = salario * 1.35
+        document.getElementById("novoSalario").innerHTML = `Novo Salário é: ${novoSalario}`
+    }
+    else{
+        novoSalario = salario * 1.15
+        document.getElementById("novoSalario").innerHTML = `Novo Salário é: ${novoSalario.toFixed(2)}`
+    }
+}

@@ -30,13 +30,18 @@
         <div class="card">
             <h1> Exercício 6 </h1>
             <form>
-                <label> Salário fixo: </label>
-                <input type="number" id="salarioFixo"/>
-                <label> Comissão: </label>
-                <input type="number" id="vendas"/>
+                <label> Número 1 </label>
+                <input type="number" id="nro1"/>
+                <label> Número 2 </label>
+                <input type="number" id="nro2"/>
+                <label> Escolha a sua opção </label>
+                <select id="selecao">
+                    <option value="1"> O Primeiro Número Elevado ao Segundo Número </option>
+                    <option value="2"> Raiz Quadrada de Cada um dos Números </option>
+                    <option value="3"> Raiz Cúbica de Cada um dos Números </option>
+                </select>
                 <button onclick="exe6()" type="button">Calcular</button>
-                <label id="comissao"> Comissão: </label>
-                <label id="salarioFinal"> Salário Final: </label>
+                <label id="resultado">O resultado é:</label>
             </form>
         </div>
     </div>

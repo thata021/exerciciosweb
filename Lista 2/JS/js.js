@@ -146,3 +146,52 @@ function exe8(){
         document.getElementById("novoSalario").innerHTML = `Novo Salário é: ${novoSalario.toFixed(2)}`
     }
 }
+
+function exe9(){
+    let saldo = Number(document.getElementById("saldo").value)
+    //calcular o credito
+    let credito = 0 //incializa com 0
+    if(saldo > 400){
+        credito = saldo * 30/100
+    }
+    else if ((saldo > 300) && (saldo <= 400)){
+        credito = saldo * 25/100
+    }
+    else if ((saldo > 200) && (saldo <= 300)){
+        credito = saldo * 20/100
+    }
+    else if ((saldo >= 0) && (saldo <= 200)){
+        credito = saldo * 10/100
+    }
+    else { //saldo negativo
+    document.getElementById("credito").innerHTML = "Saldo não pode ser negativo"
+    return // saiu da função
+    }
+    document.getElementById("credito").innerHTML = `saldo ${saldo} e crédito ${credito}`
+}
+
+function exe10(){
+    //recupera o custo da fabrica
+    let custo = Number(document.getElementById("custo").value)
+    let distribuidor =0
+    let imposto = 0
+    if(custo >= 0 && custo < 12000){
+        distribuidor = custo * 5/100
+        imposto = 0
+    }
+    else if (custo >= 12000 && custo <= 25000){
+        distribuidor = custo * 10/100
+        imposto = custo * 15/100
+    }
+    else if (custo > 25000){
+        distribuidor = custo * 15/100
+        imposto = custo * 20/100
+    }
+    else {
+        document.getElementById("consumidor").innerHTML = "custo negativo"
+        return // sai da função
+    }
+    let consumidor = custo + distribuidor + imposto
+    document.getElementById("consumidor").innerHTML = `custo da fábrica ${custo} <br/> Distribuidor ${distribuidor} <br/> Imposto ${imposto} <br/> Valor ao consumidor ${consumidor}`
+
+}

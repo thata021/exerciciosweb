@@ -100,3 +100,50 @@ function exe5(){
     }
     document.getElementById("resultado2").innerHTML = resultado // Exibe a tabela na página
 }
+
+function exe6(){
+    let codigo, valor, totalVista = 0, totalPrazo = 0
+    for(let i = 1; i <= 5; i++){
+        do {
+            codigo = prompt("Digite V (à vista) ou P (à prazo)").toUpperCase()
+        }
+        while (codigo != 'V' && codigo != 'P')
+        valor = Number(prompt("Digite o valor da transação"))
+        if (codigo == 'V'){
+            totalVista += valor
+        }
+        else {
+            totalPrazo += valor
+        }
+    }
+    document.getElementById("resultado").innerHTML = `Total à vista ${totalVista} <br/> Total à prazo ${totalPrazo} <br/> Total geral ${totalPrazo + totalVista} <br/> e Valor da primeira parcela ${totalPrazo / 3}`
+}
+
+function exe7(){
+    let idade, altura, peso, idade50 = 0, idade10e20 = 0, somaAltura = 0, peso40 = 0
+    for(let i = 1; i <= 2; i++){
+        do {
+            idade = Number(prompt("Informe a idade"))
+        }
+        while (idade <= 0)
+        do {
+            altura = Number(prompt("Informe a altura"))
+        }
+        while (altura < 0)
+        do {
+            peso = Number(prompt("Informe o peso"))
+        }
+        while (peso < 0)
+        if (idade > 50){ //item 1
+                idade50++
+            }
+        if (idade >= 10 && idade <= 20){ //item 2
+            idade10e20++
+            somaAltura += altura
+        }
+        if (peso < 40){
+        peso40++
+        }
+    }
+    document.getElementById("resultado").innerHTML = `<br/> Item 1: ${idade50} <br/> Item 2: ${somaAltura/idade10e20} <br/> Item 3: ${peso40}`
+}
